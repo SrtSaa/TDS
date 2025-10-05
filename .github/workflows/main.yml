@@ -1,0 +1,30 @@
+# This is the name of your GitHub Action workflow.
+name: My Custom Workflow
+
+# This section defines when the workflow will run.
+# 'on: push' means it triggers on every push event.
+on:
+  push:
+    branches: [ main ] # You can change 'main' to your default branch name if it's different.
+
+# This section defines the jobs to be run.
+jobs:
+  # 'build' is the ID of the job.
+  build:
+    # 'runs-on' specifies the type of machine to run the job on.
+    runs-on: ubuntu-latest
+
+    # 'steps' are the sequence of tasks that will be executed as part of the job.
+    steps:
+      # This is the first step, which checks out your repository's code.
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      # This is the custom step required by your task.
+      # The 'name' contains your email address.
+      - name: 22f1001198@ds.study.iitm.ac.in
+        run: echo "This step is named with my email address. Hello from the action!"
+
+      # This is just another example step.
+      - name: Say goodbye
+        run: echo "Workflow finished."
