@@ -1,0 +1,9 @@
+from PIL import Image
+
+with Image.open("boxes.png") as img:
+    print(img.size)
+    if img.mode == "RGBA":
+        img = img.convert("RGB")
+    img.save("compressed_boxes.webp", "WEBP", quality=80, optimize=True)
+with Image.open("compressed_boxes.webp") as img:
+    print(img.size)
